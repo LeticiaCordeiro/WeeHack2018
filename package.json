@@ -1,14 +1,23 @@
 {
   "name": "weehack2018",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "leticia cordeiro",
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^1.1.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeticiaCordeiro/WeeHack2018.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeticiaCordeiro/WeeHack2018/issues"
+  },
+  "homepage": "https://github.com/LeticiaCordeiro/WeeHack2018#readme",
+  "description": ""
 }

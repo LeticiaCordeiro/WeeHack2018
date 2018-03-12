@@ -1,10 +1,11 @@
+//npm init ->  quando  for  criar um novo projeto criar o package.json
 //para  rodar node index.js
 const puppeteer = require('puppeteer')
 //para  ver  o navegador  
 puppeteer.launch({headless: false}).then(async browser => {
   // Configuraçoes
   const config = {
-      url: 'https://www.4devs.com.br/gerador_de_cpf'
+      url:'https://goo.gl/N93DP1'
   };
 
   // Define elemento principal
@@ -17,16 +18,18 @@ puppeteer.launch({headless: false}).then(async browser => {
       height: 950
   });
 
-  for (i = 0; i < 10; i++) { 
-    var btn_cpf = await page.$("#bt_gerar_cpf");
-    btn_cpf.click();
+  
+    var carVingadores = await page.$("#board > div:nth-child(1) > div > div.list-cards.u-fancy-scrollbar.u-clearfix.js-list-cards > a:nth-child(1) > div.list-card-details > span");
+    carVingadores.click();
+    console.log("vingadores");
     await page.waitFor(2000);
-    // => tipo uma função(){...}
+    
+    // => tipo uma função(){...} - funciona como function e return ao mesmo tempo.
     // pegar  valores de  campos 
-    var txt_cpf = await page.evaluate((a) => document.querySelector("#texto_cpf").value);
-    console.log(txt_cpf);
-  }
+    var listaHerois = await page.$$eval("#classic > div.window-overlay > div > div > div > div.window-main-col > div.checklist-list.window-module.js-checklist-list.js-no-higher-edits > div > div.checklist-items-list.js-checklist-items-list.js-no-higher-edits > div:nth-child(3)", el => el.length);
 
+    console.log(listaHerois);
+  
   //crtl + c  fechar 
   //browser.close();
 });
